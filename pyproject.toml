@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "oi-balancer"
+version = "0.1.0"
+description = ""
+authors = ["deepsp94 <anantsp94@gmail.com>"]
+readme = "README.md"
+packages = [{include = "oi_balancer"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+eth-brownie = "1.19.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
