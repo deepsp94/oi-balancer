@@ -44,6 +44,7 @@ def main(chain_id):
         imb = get_imbalance(m)
 
         # Calculate OVL amounts that need to be added or removed to balance
+        ovl_imb = (imb * state.mid(markets[0]))/1e36
 
     # Get current positions of DAO
 
