@@ -21,8 +21,7 @@ def get_markets():
 
 def get_imbalance(market):
     long_oi, short_oi = market.oiLong(), market.oiShort()
-    imb_oi = abs(long_oi - short_oi) * (-1 if short_oi > long_oi else 1)
-    return imb_oi
+    return long_oi - short_oi
 
 
 def main():
@@ -32,9 +31,12 @@ def main():
     for m in market_addrs:
         markets.append(load_contract(m))
 
-    # Get imbalance on all markets
+    for m in markets:
+        # Get imbalance on all markets
+        imb = get_imbalance(m)
 
-    # Calculate OVL amounts that need to be added or removed to balance
+        # Calculate OVL amounts that need to be added or removed to balance
+        
 
     # Get current positions of DAO
 
