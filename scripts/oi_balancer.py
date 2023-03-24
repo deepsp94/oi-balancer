@@ -16,7 +16,11 @@ def read_json(filename):
 
 
 def get_markets():
-    return read_json('markets.json')
+    return read_json('constants.json')['market']
+
+
+def get_state_contract():
+    return read_json('constants.json')['state']
 
 
 def get_imbalance(market):
@@ -24,19 +28,22 @@ def get_imbalance(market):
     return long_oi - short_oi
 
 
-def main():
+def main(chain_id):
     # Get all market addresses and contract objects
     market_addrs = list(get_markets().values())
     markets = []
     for m in market_addrs:
         markets.append(load_contract(m))
+    
+    # Get state contract
+    state_addr = get_state_contract()[chain_id]
+    state = load_contract(state_addr)
 
     for m in markets:
         # Get imbalance on all markets
         imb = get_imbalance(m)
 
         # Calculate OVL amounts that need to be added or removed to balance
-        
 
     # Get current positions of DAO
 
