@@ -4,6 +4,7 @@
         "APE-USD": "0x33659282d39e62b62060c3f9fb2230e97db15f1e"
     },
     "state": "0xC3cB99652111e7828f38544E3e94c714D8F9a51a",
-    "multicall": "0x842eC2c7D803033Edf55E478F461FC547Bc54EB2"
+    "multicall": "0x842eC2c7D803033Edf55E478F461FC547Bc54EB2",
+    "start_block": 54163540
 
 }
