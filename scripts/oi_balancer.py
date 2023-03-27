@@ -81,14 +81,13 @@ def main(acc):
 
         # Calculate OVL amounts that need to be added or removed to balance OI
         ovl_imb.append((imb * state.mid(markets[0]))/1e36)
+
+        # Get current positions of DAO
         curr_pos.append(
             get_values_dao_pos(
                 m, const['start_block'], acc, const['multicall'], state
             )
         )
-
-    breakpoint()
-    # Get current positions of DAO
 
     # Decide whether to build or unwind position
 
